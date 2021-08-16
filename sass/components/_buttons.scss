@@ -1,0 +1,105 @@
+.btn {
+    &, //this is for form button
+    &:link,
+    &:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1.5rem 4rem;
+            display: inline-block;
+            border-radius: 10rem;
+            transition: all .2s;
+            position: relative;
+            font-size: $default-font-size;
+
+            //for form button
+            border: none;
+            cursor: pointer;
+    
+        }
+    
+    &:hover {
+            transform: translateY(-.3rem); /*because down to up movement*/
+            box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+            &::after {
+                transform: scaleX(1.4) scaleY(1.6); /*scale is used to increase size*/
+                opacity: 0; /*this is for the fading effect,when set to 0 it becomes invisible*/
+            }
+            
+        }
+    
+        &:active,
+        &:focus {
+            outline: none;
+            transform: translateY(-.1rem);
+            box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+        }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+    
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    
+    }
+    
+    /*for the zooming effect on the discover btn when we hover*/
+    
+    &::after { /*this btn is actually hidden behind the original btn*/
+        content: "";
+        display: inline-block; /* content and display is must for pseudo element*/
+        height: 100%;
+        width: 100%; /*this 100% is in reference to btn*/
+        border-radius: 10rem;
+        position: absolute; /*reference is btn and not header*/
+        top: 0;
+        left: 0;
+        z-index: -1; /*defines position when elemnts r on top of one another,here -1 coz this is behind btn*/
+        transition: all .4s;
+    }
+    
+    
+    &--animated {
+        animation: moveInbottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px); //has to move up    
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0px);
+    }
+ 
+}

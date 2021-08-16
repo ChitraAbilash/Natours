@@ -1,0 +1,49 @@
+@keyframes moveInleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem); /*-ve value because we want it to move from left to right in x axis*/
+    }
+
+    80% {
+        transform: translateX(1rem); /*this is for bounding back..right to left*/
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); /*we dont want it to move finally,it has to stay in original position*/
+
+    }
+}
+
+@keyframes moveInright{
+    0% {
+        opacity: 0;
+        transform: translateX(10rem); /*+ve value because we want it to move from right to left in x axis*/
+    }
+
+    80% {
+        transform: translateX(-1rem); /*this is for bounding back..left to right*/
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); /*we dont want it to move finally,it has to stay in original position*/
+
+    }
+
+}
+
+@keyframes moveInbottom{
+    0% {
+        opacity: 0;
+        transform: translateY(3rem); 
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0); /*we dont want it to move finally,it has to stay in original position*/
+
+    } 
+}
